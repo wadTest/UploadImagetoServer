@@ -2,13 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,20 +12,19 @@
 
             <Button
                 android:id="@+id/buttonChoose"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:text="@string/string_choose_document"
-                android:layout_alignParentLeft="true"/>
+                android:layout_alignParentLeft="true"
+                android:text="@string/string_choose_document" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-               android:layout_centerHorizontal="true"
+                android:layout_centerHorizontal="true"
                 android:text="@string/string_choose_send" />
 
-
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:text="@string/string_choose_map" />
@@ -43,11 +37,17 @@
             android:layout_height="wrap_content"
             android:text="@string/string_upload_image" />
 
+        <TextView
+            android:text="เบราซ์เพื่อส่งเอกสาร"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="16dp" />
-    </LinearLayout>
 </LinearLayout>
