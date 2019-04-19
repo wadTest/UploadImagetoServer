@@ -3,4 +3,7 @@
     <string name="string_choose_file">Image</string>
     <string name="string_upload_image">Upload</string>
     <string name="string_view_image">View</string>
+    <string name="string_choose_document">ส่งเอกสาร</string>
+    <string name="string_choose_send">ส่งภาพถ่าย</string>
+    <string name="string_choose_map">ส่งพิกัดแผนที่</string>
 </resources>
