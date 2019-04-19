@@ -25,18 +25,18 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+//    url and (name image in php)
     public static final String UPLOAD_URL = "http://simplifiedcoding.16mb.com/PhotoUpload/upload.php";
     public static final String UPLOAD_KEY = "image";
 
-
     private int PICK_IMAGE_REQUEST = 1;
 
-    private Button buttonChoose;
+//    ประกาศตัวแปร
+    private Button buttonChoose, buttonChoose2, buttonChoose3;
+    private ImageView imageView, imageView2, imageView3;
     private Button buttonUpload;
 
-    private ImageView imageView;
-
-    private Bitmap bitmap;
+    private Bitmap bitmap, bitmap2, bitmap3;
 
     private Uri filePath;
 
@@ -45,15 +45,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initView();
+
+    }//Method
+
+    private void initView() {
+
+//        get event
         buttonChoose = (Button) findViewById(R.id.buttonChoose);
+        buttonChoose2 = (Button) findViewById(R.id.buttonChoose2);
+        buttonChoose3 = (Button) findViewById(R.id.buttonChoose3);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+        imageView3 = (ImageView) findViewById(R.id.imageView3);
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-
         buttonChoose.setOnClickListener(this);
+        buttonChoose2.setOnClickListener(this);
+        buttonChoose3.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == buttonChoose) {
+            showFileChooser();
+        }
+
+        if(v == buttonUpload){
+            uploadImage();
+        }
+    }
+
+//    แสดงตัวเลือกไฟล์
     private void showFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -61,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
+//    Chooser image1
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -85,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return encodedImage;
     }
 
+//    อัพโหลดรูป
     private void uploadImage(){
         class UploadImage extends AsyncTask<Bitmap,Void,String>{
 
@@ -122,14 +148,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ui.execute(bitmap);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == buttonChoose) {
-            showFileChooser();
-        }
-
-        if(v == buttonUpload){
-            uploadImage();
-        }
-    }
 }//Main Class
