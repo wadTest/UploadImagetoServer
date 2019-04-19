@@ -13,23 +13,16 @@
         <Button
             android:id="@+id/buttonChoose"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
             android:text="@string/string_choose_file" />
 
         <Button
             android:id="@+id/buttonUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/string_upload_image" />
-
-        <Button
-            android:id="@+id/buttonViewImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/string_view_image" />
+            android:text="@string/string_upload_image" />
 
     </RelativeLayout>
 
@@ -37,7 +30,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="1" />
-
 
 </LinearLayout>

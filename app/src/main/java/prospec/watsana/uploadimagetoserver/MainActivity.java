@@ -29,12 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String UPLOAD_KEY = "image";
 
 
-
     private int PICK_IMAGE_REQUEST = 1;
 
     private Button buttonChoose;
     private Button buttonUpload;
-    private Button buttonView;
 
     private ImageView imageView;
 
@@ -49,13 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonChoose = (Button) findViewById(R.id.buttonChoose);
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
-        buttonView = (Button) findViewById(R.id.buttonViewImage);
 
         imageView = (ImageView) findViewById(R.id.imageView);
 
         buttonChoose.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
-        buttonView.setOnClickListener(this);
     }
 
     private void showFileChooser() {
@@ -135,13 +131,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v == buttonUpload){
             uploadImage();
         }
-
-//        if(v == buttonView){
-//            viewImage();
-//        }
-//    }
-//
-//    private void viewImage() {
-//        startActivity(new Intent(this, ImageListView.class));
     }
-}
+}//Main Class
